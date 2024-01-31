@@ -1,4 +1,12 @@
-Para rodar o programa basta executar o comando
+Para rodar o programa, primeiramente rode o comando:
 ```docker-compose up --build```
 
-O front pode ser acessado em http://localhost:4200
+E então vá até a pasta do front:
+```cd app/GerenciadorDeDocumentos```
+
+Instale a CLI do Angular e execute o front:
+```npm install -g @angular/cli```
+```ng serve```
+
+Finalmente, acesse o front em:
+```http://localhost:4200```

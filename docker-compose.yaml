@@ -18,13 +18,3 @@ services:
       SA_DB_NAME: DocumentosDB
     ports:
       - "1433:1433"
-
-  app:
-    build:
-      context: .
-      dockerfile: ./app/GerenciadorDeDocumentos/Dockerfile
-    ports:
-      - "4200:4200"  # Change the port if needed
-    depends_on:
-      - api
-    entrypoint: ["ng", "serve"]
