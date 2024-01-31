@@ -1,0 +1,22 @@
+<div class="document-popup">
+    <h2>New Document</h2>
+    <form (submit)="submitForm()">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="document.name" required>
+  
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" [(ngModel)]="document.description" required></textarea>
+  
+      <label for="status">Status:</label>
+      <select id="status" name="status" [(ngModel)]="document.status" required>
+        <option value="pending">Pendente</option>
+        <option value="approved">Aprovado</option>
+        <option value="denied">Negado</option>
+      </select>
+  
+      <label for="file">File:</label>
+      <input type="file" id="file" name="file" (change)="handleFileInput($event)" required>
+  
+      <button type="submit">Submit</button>
+    </form>
+  </div>

@@ -1,0 +1,15 @@
+<div class="document-popup">
+    <h2>Edit Document</h2>
+    <form (submit)="submitForm()">
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" [(ngModel)]="document.description" required></textarea>
+  
+      <label for="status">Status:</label>
+      <select id="status" name="status" [(ngModel)]="document.status" required>
+        <option value="pending">Pendente</option>
+        <option value="approved">Aprovado</option>
+        <option value="denied">Negado</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+  </div>

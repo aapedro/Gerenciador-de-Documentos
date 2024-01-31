@@ -1,0 +1,8 @@
+<div class="navbar">
+    <div class="title">Gerenciador de Documentos</div>
+    <button class="add-button" (click)="toggleDocumentPopup()">Novo Documento</button>
+</div>
+
+<app-new-document-popup *ngIf="isDocumentPopupOpen" (closePopup)="toggleDocumentPopup()"
+    (submitDocument)="handleDocumentSubmission($event)">
+</app-new-document-popup>

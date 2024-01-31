@@ -1,0 +1,30 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile
+    ports:
+      - "5000:8080"
+    depends_on:
+      - db
+    entrypoint: ["/wait-for-it.sh", "db:1433", "-t", "300", "--", "dotnet", "api.dll"]
+
+  db:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      SA_PASSWORD: Senha123!
+      ACCEPT_EULA: Y
+      MSSQL_PID: Express
+      SA_DB_NAME: DocumentosDB
+    ports:
+      - "1433:1433"
+
+  app:
+    build:
+      context: .
+      dockerfile: ./app/GerenciadorDeDocumentos/Dockerfile
+    ports:
+      - "4200:4200"  # Change the port if needed
+    depends_on:
+      - api
+    entrypoint: ["ng", "serve"]

@@ -1,0 +1,94 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .document-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: auto;
+  }
+  
+  .document-table th, .document-table td {
+    border: 1px solid #e9ecef;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .document-table th:first-child, .document-table td:first-child {
+    border-top-left-radius: 10px;
+  }
+  
+  .document-table th:last-child, .document-table td:last-child {
+    border-top-right-radius: 10px;
+  }
+  
+  .document-table th {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .document-table tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+  }
+  
+  .action-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 16px; /* Adjusted padding for the buttons */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    border-radius: 5px;
+  }
+  
+  .action-button:hover {
+    background-color: #218838;
+  }
+  
+  .action-button i {
+    margin-right: 5px;
+  }
+  
+  .action-button.edit {
+    background-color: #007bff;
+  }
+  
+  .action-button.edit:hover {
+    background-color: #0056b3;
+  }
+  
+  .action-button.download {
+    background-color: #17a2b8;
+  }
+  
+  .action-button.download:hover {
+    background-color: #138496;
+  }
+  
+  .action-button.delete {
+    background-color: #dc3545;
+  }
+  
+  .action-button.delete:hover {
+    background-color: #c82333;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden; /* Hide overflowing buttons */
+  }
+  
+  /* Make the description column the widest */
+  .document-table td:nth-child(3) {
+    width: 40%;
+  }
+  
+  

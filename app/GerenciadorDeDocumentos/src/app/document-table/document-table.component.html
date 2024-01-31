@@ -1,0 +1,28 @@
+<table class="document-table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Status</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let document of documents">
+            <td>{{ document.id }}</td>
+            <td>{{ document.fileName.split("_").slice(1).join("_") }}</td>
+            <td>{{ document.description }}</td>
+            <td>{{ getStatusLabel(document.status) }}</td>
+            <td class="buttons">
+                <button class="action-button edit" (click)="openEditDocumentPopup(document.id)"><i class="fas fa-edit"></i></button>
+                <button class="action-button download" (click)="downloadDocument(document.id, document.fileName)"><i class="fas fa-download"></i></button>
+                <button class="action-button delete" (click)="deleteDocument(document.id)"><i class="fas fa-trash-alt"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<app-edit-document-popup *ngIf="isDocumentPopupOpen" (closePopup)="closeDocumentPopup()"
+    (submitDocument)="editDocument($event)">
+</app-edit-document-popup>

@@ -19,5 +19,8 @@ RUN dotnet publish "api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAp
 
 FROM base AS final
 WORKDIR /app
+COPY api/wait-for-it.sh /wait-for-it.sh
+USER root
+RUN chmod +x /wait-for-it.sh
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "api.dll"]
